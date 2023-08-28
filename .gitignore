@@ -1,2 +1,5 @@
 .vscode/*
 .clangd
+*.cbp
+*.depend
+.DS_STORE
