@@ -12,7 +12,8 @@ int main() {
     //     cin >> x;
     //     pq.emplace(x, x);
     //     cout << 0 << "\n";
-    // }
+    // } 
+    // fuck you n > m mfs
     for(int i=0, fin, x; i<m; i++) {
         if(i < n) {
             cin >> x;
