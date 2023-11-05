@@ -11,15 +11,14 @@ void CP::stack<T>::v_split(std::vector<std::stack<T>> &output, size_t kk) const 
 	int k = kk; // get out
 	output.resize(k);
 	k = min((int)mSize, k);
-	int jump = int(mSize) / k;
-	vector<int> block_size(k, jump);
-	int left = (int)mSize % jump;
-	for(int i=0; i<left; i++) block_size[i]++;
+	int sz = (int)mSize / k;
+	int additional = (int)mSize % k;
 
 	int now=mSize-1;
 	for(int i=0; i<k; i++) {
-		for(int j=now-block_size[i]+1; j<=now; j++) output[i].push(mData[j]);
-		now -= block_size[i];
+		int now_jump = sz + (i < additional);
+		for(int j=now-now_jump+1; j<=now; j++) output[i].push(mData[j]);
+		now -= now_jump;
 	}
 
 }
